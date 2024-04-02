@@ -2,7 +2,10 @@ namespace X_and_O
 {
   public partial class X_and_O : Form
   {
+    Random rnd = new Random();
     int count;
+    int i;
+    int j;
 
     enum Symbol
     {
@@ -53,6 +56,7 @@ namespace X_and_O
         Symbols[0, 0] = Symbol.X;
         count++;
         ButtonOne.Text = "X";
+        BotMove();
       }
     }
 
@@ -63,6 +67,7 @@ namespace X_and_O
         Symbols[0, 1] = Symbol.X;
         count++;
         ButtonTwo.Text = "X";
+        BotMove();
       }
     }
 
@@ -73,6 +78,7 @@ namespace X_and_O
         Symbols[0, 2] = Symbol.X;
         count++;
         ButtonThree.Text = "X";
+        BotMove();
       }
     }
 
@@ -83,6 +89,7 @@ namespace X_and_O
         Symbols[1, 0] = Symbol.X;
         count++;
         ButtonFour.Text = "X";
+        BotMove();
       }
     }
 
@@ -93,6 +100,7 @@ namespace X_and_O
         Symbols[1, 1] = Symbol.X;
         count++;
         ButtonFive.Text = "X";
+        BotMove();
       }
     }
 
@@ -103,6 +111,7 @@ namespace X_and_O
         Symbols[1, 2] = Symbol.X;
         count++;
         ButtonSix.Text = "X";
+        BotMove();
       }
     }
 
@@ -113,6 +122,7 @@ namespace X_and_O
         Symbols[2, 0] = Symbol.X;
         count++;
         ButtonSeven.Text = "X";
+        BotMove();
       }
     }
 
@@ -123,6 +133,7 @@ namespace X_and_O
         Symbols[2, 1] = Symbol.X;
         count++;
         ButtonEight.Text = "X";
+        BotMove();
       }
     }
 
@@ -133,7 +144,22 @@ namespace X_and_O
         Symbols[2, 2] = Symbol.X;
         count++;
         ButtonEleven.Text = "X";
+        BotMove();
       }
+    }
+
+    public void BotMove()
+    {
+      do
+      {
+        i = rnd.Next(0, 3);
+        j = rnd.Next(0, 3);
+        if (Symbols[i, j] == Symbol.None)
+        {
+          Symbols[i, j] = Symbol.O;
+          break;
+        }
+      } while (Symbols[i, j] != Symbol.None && count < 5);
     }
   }
 }
