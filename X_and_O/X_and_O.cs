@@ -46,7 +46,7 @@ namespace X_and_O
       ButtonSix.Text = string.Empty;
       ButtonSeven.Text = string.Empty;
       ButtonEight.Text = string.Empty;
-      ButtonEleven.Text = string.Empty;
+      ButtonNine.Text = string.Empty;
       count = 0;
     }
 
@@ -138,7 +138,7 @@ namespace X_and_O
       }
     }
 
-    private void ButtonEleven_Click(object sender, EventArgs e)
+    private void ButtonNine_Click(object sender, EventArgs e)
     {
       if (Symbols[2, 2] == Symbol.None)
       {
@@ -202,7 +202,7 @@ namespace X_and_O
       }
       if (Symbols[2, 2] == Symbol.X)
       {
-        ButtonEleven.Text = "X";
+        ButtonNine.Text = "X";
       }
       if (Symbols[0, 0] == Symbol.O)
       {
@@ -238,7 +238,7 @@ namespace X_and_O
       }
       if (Symbols[2, 2] == Symbol.O)
       {
-        ButtonEleven.Text = "O";
+        ButtonNine.Text = "O";
       }
     }
   }

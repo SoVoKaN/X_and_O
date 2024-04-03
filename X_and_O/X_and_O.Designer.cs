@@ -37,7 +37,7 @@
       ButtonSix = new Button();
       ButtonSeven = new Button();
       ButtonEight = new Button();
-      ButtonEleven = new Button();
+      ButtonNine = new Button();
       SuspendLayout();
       // 
       // RestartButton
@@ -131,22 +131,22 @@
       ButtonEight.UseVisualStyleBackColor = false;
       ButtonEight.Click += ButtonEight_Click;
       // 
-      // ButtonEleven
+      // ButtonNine
       // 
-      ButtonEleven.BackColor = SystemColors.ButtonFace;
-      ButtonEleven.Location = new Point(256, 255);
-      ButtonEleven.Name = "ButtonEleven";
-      ButtonEleven.Size = new Size(129, 107);
-      ButtonEleven.TabIndex = 9;
-      ButtonEleven.UseVisualStyleBackColor = false;
-      ButtonEleven.Click += ButtonEleven_Click;
+      ButtonNine.BackColor = SystemColors.ButtonFace;
+      ButtonNine.Location = new Point(256, 255);
+      ButtonNine.Name = "ButtonNine";
+      ButtonNine.Size = new Size(129, 107);
+      ButtonNine.TabIndex = 9;
+      ButtonNine.UseVisualStyleBackColor = false;
+      ButtonNine.Click += ButtonNine_Click;
       // 
       // X_and_O
       // 
       AutoScaleDimensions = new SizeF(7F, 15F);
       AutoScaleMode = AutoScaleMode.Font;
       ClientSize = new Size(384, 361);
-      Controls.Add(ButtonEleven);
+      Controls.Add(ButtonNine);
       Controls.Add(ButtonEight);
       Controls.Add(ButtonSeven);
       Controls.Add(ButtonSix);
@@ -176,6 +176,6 @@
     private Button ButtonSix;
     private Button ButtonSeven;
     private Button ButtonEight;
-    private Button ButtonEleven;
+    private Button ButtonNine;
   }
 }
