@@ -17,12 +17,30 @@ namespace X_and_O
     public X_and_O()
     {
       InitializeComponent();
+
+      Buttons[0, 0] = ButtonOne;
+      Buttons[0, 1] = ButtonTwo;
+      Buttons[0, 2] = ButtonThree;
+      Buttons[1, 0] = ButtonFour;
+      Buttons[1, 1] = ButtonFive;
+      Buttons[1, 2] = ButtonSix;
+      Buttons[2, 0] = ButtonSeven;
+      Buttons[2, 1] = ButtonEight;
+      Buttons[2, 2] = ButtonNine;
+
+      SymbolToString[Symbol.None] = string.Empty;
+      SymbolToString[Symbol.X] = "X"; 
+      SymbolToString[Symbol.O] = "O";
     }
 
     Symbol[,] Symbols =
     { {Symbol.None, Symbol.None, Symbol.None},
       {Symbol.None, Symbol.None, Symbol.None},
       {Symbol.None, Symbol.None, Symbol.None} };
+
+    Button[,] Buttons = new Button[3, 3];
+
+    Dictionary<Symbol, string> SymbolToString = new Dictionary<Symbol, string>();
 
     private void RestartButton_Click(object sender, EventArgs e)
     {
@@ -36,17 +54,9 @@ namespace X_and_O
         for (int j = 0; j < 3; j++)
         {
           Symbols[i, j] = Symbol.None;
+          Buttons[i, j].Text = string.Empty;
         }
       }
-      ButtonOne.Text = string.Empty;
-      ButtonTwo.Text = string.Empty;
-      ButtonThree.Text = string.Empty;
-      ButtonFour.Text = string.Empty;
-      ButtonFive.Text = string.Empty;
-      ButtonSix.Text = string.Empty;
-      ButtonSeven.Text = string.Empty;
-      ButtonEight.Text = string.Empty;
-      ButtonNine.Text = string.Empty;
       count = 0;
     }
 
@@ -168,77 +178,12 @@ namespace X_and_O
 
     public void PrintButtonText()
     {
-      if (Symbols[0, 0] == Symbol.X)
+      for (int i = 0; i < 3; i++)
       {
-        ButtonOne.Text = "X";
-      }
-      if (Symbols[0, 1] == Symbol.X)
-      {
-        ButtonTwo.Text = "X";
-      }
-      if (Symbols[0, 2] == Symbol.X)
-      {
-        ButtonThree.Text = "X";
-      }
-      if (Symbols[1, 0] == Symbol.X)
-      {
-        ButtonFour.Text = "X";
-      }
-      if (Symbols[1, 1] == Symbol.X)
-      {
-        ButtonFive.Text = "X";
-      }
-      if (Symbols[1, 2] == Symbol.X)
-      {
-        ButtonSix.Text = "X";
-      }
-      if (Symbols[2, 0] == Symbol.X)
-      {
-        ButtonSeven.Text = "X";
-      }
-      if (Symbols[2, 1] == Symbol.X)
-      {
-        ButtonEight.Text = "X";
-      }
-      if (Symbols[2, 2] == Symbol.X)
-      {
-        ButtonNine.Text = "X";
-      }
-      if (Symbols[0, 0] == Symbol.O)
-      {
-        ButtonOne.Text = "O";
-      }
-      if (Symbols[0, 1] == Symbol.O)
-      {
-        ButtonTwo.Text = "O";
-      }
-      if (Symbols[0, 2] == Symbol.O)
-      {
-        ButtonThree.Text = "O";
-      }
-      if (Symbols[1, 0] == Symbol.O)
-      {
-        ButtonFour.Text = "O";
-      }
-      if (Symbols[1, 1] == Symbol.O)
-      {
-        ButtonFive.Text = "O";
-      }
-      if (Symbols[1, 2] == Symbol.O)
-      {
-        ButtonSix.Text = "O";
-      }
-      if (Symbols[2, 0] == Symbol.O)
-      {
-        ButtonSeven.Text = "O";
-      }
-      if (Symbols[2, 1] == Symbol.O)
-      {
-        ButtonEight.Text = "O";
-      }
-      if (Symbols[2, 2] == Symbol.O)
-      {
-        ButtonNine.Text = "O";
+        for (int j = 0; j < 3; j++)
+        {
+          Buttons[i, j].Text = SymbolToString[Symbols[i, j]];
+        }
       }
     }
   }
