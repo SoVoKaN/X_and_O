@@ -47,6 +47,7 @@ namespace X_and_O
       ButtonSeven.Text = string.Empty;
       ButtonEight.Text = string.Empty;
       ButtonEleven.Text = string.Empty;
+      count = 0;
     }
 
     private void ButtonOne_Click(object sender, EventArgs e)
@@ -55,8 +56,8 @@ namespace X_and_O
       {
         Symbols[0, 0] = Symbol.X;
         count++;
-        ButtonOne.Text = "X";
         BotMove();
+        PrintButtonText();
       }
     }
 
@@ -66,8 +67,8 @@ namespace X_and_O
       {
         Symbols[0, 1] = Symbol.X;
         count++;
-        ButtonTwo.Text = "X";
         BotMove();
+        PrintButtonText();
       }
     }
 
@@ -77,8 +78,8 @@ namespace X_and_O
       {
         Symbols[0, 2] = Symbol.X;
         count++;
-        ButtonThree.Text = "X";
         BotMove();
+        PrintButtonText();
       }
     }
 
@@ -88,8 +89,8 @@ namespace X_and_O
       {
         Symbols[1, 0] = Symbol.X;
         count++;
-        ButtonFour.Text = "X";
         BotMove();
+        PrintButtonText();
       }
     }
 
@@ -99,8 +100,8 @@ namespace X_and_O
       {
         Symbols[1, 1] = Symbol.X;
         count++;
-        ButtonFive.Text = "X";
         BotMove();
+        PrintButtonText();
       }
     }
 
@@ -110,8 +111,8 @@ namespace X_and_O
       {
         Symbols[1, 2] = Symbol.X;
         count++;
-        ButtonSix.Text = "X";
         BotMove();
+        PrintButtonText();
       }
     }
 
@@ -121,8 +122,8 @@ namespace X_and_O
       {
         Symbols[2, 0] = Symbol.X;
         count++;
-        ButtonSeven.Text = "X";
         BotMove();
+        PrintButtonText();
       }
     }
 
@@ -132,8 +133,8 @@ namespace X_and_O
       {
         Symbols[2, 1] = Symbol.X;
         count++;
-        ButtonEight.Text = "X";
         BotMove();
+        PrintButtonText();
       }
     }
 
@@ -143,23 +144,102 @@ namespace X_and_O
       {
         Symbols[2, 2] = Symbol.X;
         count++;
-        ButtonEleven.Text = "X";
         BotMove();
+        PrintButtonText();
       }
     }
 
     public void BotMove()
     {
-      do
+      if (count < 5)
       {
-        i = rnd.Next(0, 3);
-        j = rnd.Next(0, 3);
-        if (Symbols[i, j] == Symbol.None)
+        do
         {
-          Symbols[i, j] = Symbol.O;
-          break;
-        }
-      } while (Symbols[i, j] != Symbol.None && count < 5);
+          i = rnd.Next(0, 3);
+          j = rnd.Next(0, 3);
+          if (Symbols[i, j] == Symbol.None)
+          {
+            Symbols[i, j] = Symbol.O;
+            break;
+          }
+        } while (Symbols[i, j] != Symbol.None);
+      }
+    }
+
+    public void PrintButtonText()
+    {
+      if (Symbols[0, 0] == Symbol.X)
+      {
+        ButtonOne.Text = "X";
+      }
+      if (Symbols[0, 1] == Symbol.X)
+      {
+        ButtonTwo.Text = "X";
+      }
+      if (Symbols[0, 2] == Symbol.X)
+      {
+        ButtonThree.Text = "X";
+      }
+      if (Symbols[1, 0] == Symbol.X)
+      {
+        ButtonFour.Text = "X";
+      }
+      if (Symbols[1, 1] == Symbol.X)
+      {
+        ButtonFive.Text = "X";
+      }
+      if (Symbols[1, 2] == Symbol.X)
+      {
+        ButtonSix.Text = "X";
+      }
+      if (Symbols[2, 0] == Symbol.X)
+      {
+        ButtonSeven.Text = "X";
+      }
+      if (Symbols[2, 1] == Symbol.X)
+      {
+        ButtonEight.Text = "X";
+      }
+      if (Symbols[2, 2] == Symbol.X)
+      {
+        ButtonEleven.Text = "X";
+      }
+      if (Symbols[0, 0] == Symbol.O)
+      {
+        ButtonOne.Text = "O";
+      }
+      if (Symbols[0, 1] == Symbol.O)
+      {
+        ButtonTwo.Text = "O";
+      }
+      if (Symbols[0, 2] == Symbol.O)
+      {
+        ButtonThree.Text = "O";
+      }
+      if (Symbols[1, 0] == Symbol.O)
+      {
+        ButtonFour.Text = "O";
+      }
+      if (Symbols[1, 1] == Symbol.O)
+      {
+        ButtonFive.Text = "O";
+      }
+      if (Symbols[1, 2] == Symbol.O)
+      {
+        ButtonSix.Text = "O";
+      }
+      if (Symbols[2, 0] == Symbol.O)
+      {
+        ButtonSeven.Text = "O";
+      }
+      if (Symbols[2, 1] == Symbol.O)
+      {
+        ButtonEight.Text = "O";
+      }
+      if (Symbols[2, 2] == Symbol.O)
+      {
+        ButtonEleven.Text = "O";
+      }
     }
   }
 }
